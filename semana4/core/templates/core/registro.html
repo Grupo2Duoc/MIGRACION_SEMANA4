@@ -1,12 +1,10 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="{% static 'core/css/style.css'%}">
-  <link rel="stylesheet" src="{% static 'core/css/style.css'%}">
-  <title>Game on Formulario de Registro</title> 
+  <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+  <title>Game on Formulario de Registro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- Scripts jQuery y Bootstrap -->
@@ -14,13 +12,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script src="js/Jquery.js"></script>
+  <script src="{% static 'core/js/jquery.js' %}"></script>
 </head>
 
-<body id="fondo" background="img/background.png">
+<body id="fondo" background="{% static 'core/img/background.png'%}">
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="{% url 'index' %}">
         <strong>Game On</strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -30,18 +29,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categorías
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="accion.html">Acción</a></li>
-              <li><a class="dropdown-item" href="familiar.html">Familiar</a></li>
-              <li><a class="dropdown-item" href="deportes.html">Deportes</a></li>
-              <li><a class="dropdown-item" href="horror.html">Horror</a></li>
-              <li><a class="dropdown-item" href="rpg1.html">RPG</a></li>
+              <li><a class="dropdown-item" href="{% url 'accion' %}">Acción</a></li>
+              <li><a class="dropdown-item" href="{% url 'familiar' %}">Familiar</a></li>
+              <li><a class="dropdown-item" href="{% url 'deportes' %}">Deportes</a></li>
+              <li><a class="dropdown-item" href="{% url 'horror' %}">Horror</a></li>
+              <li><a class="dropdown-item" href="{% url 'rpg1' %}">RPG</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -59,7 +58,7 @@
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <img src="img/banner.png" class="card-img" alt="banner">
+        <img src="{% static 'core/img/banner.png' %}" class="card-img" alt="banner">
       </div>
     </div>
   </div>
@@ -71,22 +70,22 @@
     </h3>
   </div>
   <!--AUTENTICACION DE USUARIO-->
-  <div class="login-container text-center" >
+  <div class="login-container text-center">
     <form role="search" id="formulario-login" style="margin:auto; width: 35%;">
-        <div class="mb-3">
-          <input class="form-control" type="text" placeholder="Nombre de usuario o e-mail" aria-label="Username"
-            id="username">
-          <small class="text-danger" id="username-error"></small>
-        </div>
-        <div class="mb-3">
-          <input class="form-control" type="password" placeholder="Contraseña" aria-label="Password" id="passwordLogin">
-          <small class="text-danger" id="password-error-login"></small>
-        </div>
-        <div class="d-grid">      
-            <button class="btn btn-outline-primary" type="submit">Iniciar Sesión</button>        
-        </div>
+      <div class="mb-3">
+        <input class="form-control" type="text" placeholder="Nombre de usuario o e-mail" aria-label="Username"
+          id="username">
+        <small class="text-danger" id="username-error"></small>
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="password" placeholder="Contraseña" aria-label="Password" id="passwordLogin">
+        <small class="text-danger" id="password-error-login"></small>
+      </div>
+      <div class="d-grid">
+        <button class="btn btn-outline-primary" type="submit">Iniciar Sesión</button>
+      </div>
     </form>
-    <a href="recuperar_contrasena.html" class="btn btn-link" target="_blank">Recuperación de Contraseña</a>
+    <a href="{% url 'recuperar_contrasena' %}" class="btn btn-link" target="_blank">Recuperación de Contraseña</a>
   </div>
   <br>
   <!--FORMULARIO DE REGISTRO-->
@@ -156,7 +155,14 @@
         </div>
       </div>
     </div>
+  </div>
 
+  <footer class="footer fixed-bottom">
+    <p>
+      <center> Diseñado por Grupo 2 - Programación Web - Copyright 2024©</center>
+    </p>
+  </footer>
+  
 </body>
 
 </html>
