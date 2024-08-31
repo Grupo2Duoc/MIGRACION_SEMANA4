@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, callofduty, registro, accion, rpg1, deportes, familiar, horror, godofwar, fallguys, baldursgate
+from .views import index, callofduty, registro, accion, rpg1, deportes, familiar, horror, godofwar, fallguys, baldursgate, thelastofus, dvm3, perfil, recuperar_contrasena
 
 
 
@@ -28,6 +28,16 @@ urlpatterns=[
     path('fallguys/', fallguys, name="fallguys"),
 
     path('baldursgate/', baldursgate, name="baldursgate"),
+
+    path('thelastofus/', thelastofus, name="thelastofus"),
+
+    path('dvm3/', dvm3, name="dvm3"),  
+
+    path('perfil/', perfil, name="perfil"),
+
+    path('recuperar_contrasena/', perfil, name="recuperar_contrasena"),
+
+
 
 
 

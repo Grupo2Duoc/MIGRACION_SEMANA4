@@ -39,5 +39,8 @@ def godofwar(request):
 def perfil(request):
     return render(request, 'core/perfil.html')
 
+def recuperar_contrasena(request):
+    return render(request, 'core/recuperar_contrasena.html')
+
 
 
